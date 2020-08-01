@@ -11,6 +11,8 @@ namespace ImportIOClient
         private readonly HttpClient _client;
 
         private readonly ImportIOConfig _config;
+        private readonly DataClient _dataClient;
+        private readonly ScheduleClient scheduleClient;
 
         public ImportIOClient(string apiKey)
             : this(new HttpClient(), apiKey)
@@ -32,13 +34,25 @@ namespace ImportIOClient
             {
                 ApiKey = apiKey
             };
-            Data = new DataClient(this);
-            Schedule = new ScheduleClient(this);
         }
 
-        public DataClient Data { get; }
+        public DataClient Data
+        {
+            get
+            {
+                ConfigureClient(x => x.BaseUri = new Uri(DataClient._baseDataUri));
+                return _dataClient ?? new DataClient(this);
+            }
+        }
 
-        public ScheduleClient Schedule { get; }
+        public ScheduleClient Schedule
+        {
+            get
+            {
+                ConfigureClient(x => x.BaseUri = new Uri(ScheduleClient._baseScheduleUri));
+                return scheduleClient ?? new ScheduleClient(this);
+            }
+        }
 
         public void ConfigureClient(Action<ImportIOConfig> configure) => configure?.Invoke(_config);
 

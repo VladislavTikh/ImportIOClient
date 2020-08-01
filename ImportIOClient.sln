@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30225.117
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImportIOClient", "ImportIOClient.csproj", "{498C6526-2A52-4542-86B2-ED7C29F0D0CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImportIOClient", "ImportIOClient.csproj", "{498C6526-2A52-4542-86B2-ED7C29F0D0CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleClient", "..\ConsoleClient\ConsoleClient.csproj", "{32AA305A-686D-475B-A218-357750A9DCC1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{498C6526-2A52-4542-86B2-ED7C29F0D0CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{498C6526-2A52-4542-86B2-ED7C29F0D0CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{498C6526-2A52-4542-86B2-ED7C29F0D0CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32AA305A-686D-475B-A218-357750A9DCC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32AA305A-686D-475B-A218-357750A9DCC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32AA305A-686D-475B-A218-357750A9DCC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32AA305A-686D-475B-A218-357750A9DCC1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -6,7 +6,7 @@ namespace ImportIOClient
     public class DataClient
     {
         private readonly ImportIOClient _client;
-        private const string _baseDataUri = "https://data.import.io";
+        public const string _baseDataUri = "https://data.import.io";
 
         internal DataClient(ImportIOClient client)
         {

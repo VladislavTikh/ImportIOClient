@@ -2,7 +2,7 @@
 
 namespace ImportIOClient.Models
 {
-    public class ImportErrorResult
+    public class ImportResult
     {
         [JsonProperty("message")]
         public string Message { get; set; }
