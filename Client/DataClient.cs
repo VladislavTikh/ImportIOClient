@@ -20,7 +20,7 @@ namespace ImportIOClient
         /// <param name="extractorID">Unique identifier of your extractor.</param>
         /// <param name="format">Specifies returned format.</param>
         /// <returns></returns>
-        public async Task<string> GetLatestRunResult(string extractorID, ContentFormat format = ContentFormat.JSON)
+        public async Task<string> GetLatestRunResultAsync(string extractorID, ContentFormat format = ContentFormat.JSON)
         {
             if (string.IsNullOrEmpty(extractorID))
             {

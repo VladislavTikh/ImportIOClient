@@ -16,9 +16,9 @@ namespace ImportIOClient
             _client.ConfigureClient(x => x.BaseUri = new Uri(_scheduleBaseUri));
         }
 
-        public async Task<IEnumerable<Extractor>> GetExtractorsAsync()
+        public async Task<IEnumerable<Schedule>> GetSchedulesAsync()
         {
-            return await _client.SendAsync<IEnumerable<Extractor>>(JsonDeserializer.Default);
+            return await _client.SendAsync<IEnumerable<Schedule>>(JsonDeserializer.Default);
         }
     }
 }

@@ -32,7 +32,13 @@ namespace ImportIOClient
             {
                 ApiKey = apiKey
             };
+            Data = new DataClient(this);
+            Schedule = new ScheduleClient(this);
         }
+
+        public DataClient Data { get; }
+
+        public ScheduleClient Schedule { get; }
 
         public void ConfigureClient(Action<ImportIOConfig> configure) => configure?.Invoke(_config);
 

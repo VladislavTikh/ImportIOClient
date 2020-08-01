@@ -2,7 +2,7 @@
 
 namespace ImportIOClient.Models
 {
-    public class Extractor
+    public class Schedule
     {
         [JsonProperty("extractorId")]
         public string ExtractorId { get; set; }
