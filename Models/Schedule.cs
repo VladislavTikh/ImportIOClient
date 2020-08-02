@@ -15,6 +15,6 @@ namespace ImportIOClient.Models
         [JsonProperty("nextRunAt")]
         public decimal NextRunAt { get; set; }
         [JsonProperty("startTimestamp")]
-        public string StartTimeStamp { get; set; }
+        public long StartTimeStamp { get; set; }
     }
 }

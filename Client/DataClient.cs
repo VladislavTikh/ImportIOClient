@@ -11,7 +11,6 @@ namespace ImportIOClient
         internal DataClient(ImportIOClient client)
         {
             _client = client;
-            _client.ConfigureClient(x => x.BaseUri = new Uri(_baseDataUri));
         }
 
         /// <summary>
