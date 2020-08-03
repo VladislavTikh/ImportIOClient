@@ -1,5 +1,6 @@
 ﻿using ImportIOClient.Client;
 using ImportIOClient.Models;
+using ImportIOClient.Models.Exceptions;
 using ImportIOClient.Serialization;
 using System;
 using System.Linq;
@@ -15,6 +16,7 @@ namespace ImportIOClient
         private DataClient _dataClient;
         private ScheduleClient _scheduleClient;
         private ExtractionClient _extractionClient;
+        private CrawlRunClient _crawlRunClient;
 
         public ImportIOClient(string apiKey)
             : this(new HttpClient(), apiKey)
@@ -79,6 +81,19 @@ namespace ImportIOClient
             }
         }
 
+        public CrawlRunClient CrawlRun
+        {
+            get
+            {
+                ConfigureClient(x => x.BaseUri = new Uri(CrawlRunClient._baseCrawlRunUri));
+                if (_crawlRunClient == null)
+                {
+                    _crawlRunClient = new CrawlRunClient(this);
+                }
+                return _crawlRunClient;
+            }
+        }
+
         public Task<string> GetRawDataAsync(params Field[] fields)
         {
             return SendAsync(fields, content => content.ReadAsStringAsync(), new RequestData
@@ -104,7 +119,14 @@ namespace ImportIOClient
             using (var responseMessage = await _client.SendAsync(request))
             {
                 if (!responseMessage.IsSuccessStatusCode)
-                    throw new Exception(responseMessage.ReasonPhrase);
+                {
+                    var result = await JsonDeserializer.Default.Deserialize<ImportResult>(responseMessage.Content);
+                    throw new ImportClientException
+                    {
+                        Code = result.Code,
+                        ErrorMessage = result.Message
+                    };
+                }
                 return await deserialise(responseMessage.Content);
             }
         }
