@@ -1,11 +1,28 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <ApplicationIcon>import.io.ico</ApplicationIcon>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>VladislavTikh</Authors>
+    <Company>GitHub</Company>
+    <Description>Convenient wrapper on import.io API service.</Description>
+    <Copyright>(c) Copyright 2020</Copyright>
+    <PackageProjectUrl>https://github.com/VladislavTikh/ImportIOClient</PackageProjectUrl>
+    <PackageIcon>import.io.jpg</PackageIcon>
+    <RepositoryUrl>https://github.com/VladislavTikh/ImportIOClient</RepositoryUrl>
+    <NeutralLanguage>aa</NeutralLanguage>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\import.io.jpg">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
