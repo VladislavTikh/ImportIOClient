@@ -11,7 +11,7 @@ Client can be easily integrated in your web service for crawling 🕷️ or data
 - Lightweight 🍃
 - Simple 🐣
 - Extendable 🌍
-- **TO BE DONE** :This module can be downloaded as NuGet package 📦
+- This module can be downloaded as NuGet package 📦
 
 ---
 
